@@ -4,6 +4,8 @@
     {
         header("Location: ../login.php");
     }
+
+    include "../controllers/editUserController.php"
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +16,12 @@
         <link rel="stylesheet" href="../resources/vendors/bootstrap/bootstrap.min.css">
 
         <link rel="stylesheet" href="../resources/css/style.css">
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
+
     </head>
 
     <body>
@@ -24,37 +32,43 @@
             ?>
         </header>
 
+
         <div class="wrapper">
             <div class="accessContainer box">
                 <img class="logo" src="../resources/img/editUser.png" alt="Edit User Icon" />
-                <h1 class="mb-3">Edit User</h1>
+                <h1 class="mb-3">Edit</h1>
                 <form method="post" action="">
 
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" placeholder="Username" name="userName" />
+                        <input type="text" class="form-control" placeholder="Username" name="userName" value="<?php echo $_SESSION["nameUser"]?>"/>
                         <label>Username</label>
                     </div>
+
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" placeholder="name@example.com" name="email" />
+                        <input type="email" class="form-control" placeholder="name@example.com" name="email" value="<?php echo $_SESSION["emailUser"]?>" />
                         <label>Email</label>
                     </div>
+
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" placeholder="Password" name="password" />
                         <label>Password</label>
                     </div>
+
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" placeholder="Confirm Password" name="passwordConfirm" />
                         <label>Confirm Password</label>
                     </div>
-                    <div class="d-grid gap-2 mb-3">
-                        <button name="btnSignUp" class="btn btn-lg btn-primary" type="submit">Sign Up</button>
+
+                    <?php echo $errorMessage; ?>
+
+                    <div class="d-grid gap-2 mt-4 mb-2">
+                        <button name="btnDeleteUser" class="btn btn-lg btn-danger" type="submit">Delete Account</button>
                     </div>
 
-                    <?php
-                        
-                    ?>
+                    <div class="d-grid gap-2 mb-3">
+                        <button name="btnUpdateUser" class="btn btn-lg btn-success" type="submit">Save Changes</button>
+                    </div>
 
-                    <p>Already have account? <a href="../login.php">Login</a> </p>
                 </form>
             </div>
         </div>

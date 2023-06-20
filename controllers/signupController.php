@@ -58,6 +58,9 @@
                                     throw new Exception('Unable to fetch user data');
                                 }
                                 
+                                //Close database connection
+                                closeConn($dbConn);
+
                                 header("location: ../views/dashboard.php");
                             }
 
@@ -83,58 +86,6 @@
             {
                 echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Missing Fields!</div>";
             }
-
-            // //If email and password are not empty
-            // if(!empty($_POST["email"]) and !empty($_POST["password"]))
-            // {
-            //     $userEmail = $_POST["email"];
-            //     $userPassword = $_POST["password"];
-
-            //     try 
-            //     {
-            //         //Try database connection
-            //         $dbConn = openConn();
-
-            //         try
-            //         {
-            //             //Try sql query
-            //             $sql = $dbConn -> query("select * from users where email = '$userEmail' and password = '$userPassword'");
-
-            //             if($userData = $sql -> fetch_object())
-            //             {
-            //                 $_SESSION["userId"] = $userData -> idUser;
-            //                 $_SESSION["nameUser"] = $userData -> userName;
-            //                 $_SESSION["emailUser"] = $userData -> email;
-            //                 $_SESSION["userRole"] = $userData -> role;
-
-            //                 echo "<div class='alert alert-success d-grid gap-2 mb-3' role='alert'>" . $_SESSION["emailUser"] . "</div>";
-            //             }
-            //             else
-            //             {
-            //                 echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Invalid email or wrong password</div>";
-            //             }
-
-            //         }
-            //         //Sql query exception
-            //         catch(Exception $e)
-            //         {
-            //             echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
-            //         }
-
-            //         //Close database connection
-            //         closeConn($dbConn);
-            //     }
-            //     //Data base connection exception
-            //     catch(Exception $e) 
-            //     {
-            //         echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
-            //     }
-            // }
-            // //Missing Credentials
-            // else
-            // {
-            //     echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Missing Credentials!</div>";
-            // }
         }
     }
 

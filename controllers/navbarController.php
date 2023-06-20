@@ -10,6 +10,11 @@
             session_destroy(); 
             header("Location: ../login.php"); 
         }
+
+        if(!empty($_POST['btnEditUser'])) 
+        { 
+            header("Location: ../views/editUser.php"); 
+        }
     }
 
 ?> 

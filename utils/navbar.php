@@ -35,7 +35,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
                     <ul class="dropdown-menu">
                         <form action="../controllers/navbarController.php" method="post">
-                            <li><a class="dropdown-item" href="../views/editUser.php">Edit</a></li>
+                            <li><input type="submit" value="Edit" class="dropdown-item" name="btnEditUser"></li>
                             <li><input type="submit" value="Log Out" class="dropdown-item" name="btnLogOut"></li>
                         </form>
                     </ul>

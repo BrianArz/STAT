@@ -35,6 +35,9 @@
                             $_SESSION["emailUser"] = $userData -> email;
                             $_SESSION["userRole"] = $userData -> role;
 
+                            //Close database connection
+                            closeConn($dbConn);
+
                             header("Location: views/dashboard.php");
                         }
                         else
@@ -48,9 +51,6 @@
                     {
                         echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
                     }
-
-                    //Close database connection
-                    closeConn($dbConn);
                 }
                 //Data base connection exception
                 catch(Exception $e) 
