@@ -13,7 +13,7 @@
     //Database exception
     catch(Exception $e)
     {
-        echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
+        $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
     }
 
     //Only if post
@@ -25,6 +25,10 @@
 
             try
             {
+
+                //Update user query
+                $dbConn -> query("delete from userExams where idUser = '$userId'");
+
                 //Update user query
                 $dbConn -> query("delete from users where idUser = '$userId'");
                 
@@ -39,7 +43,7 @@
             //SQL query exception
             catch(Exception $e)
             {
-                echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
+                $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
             }
         }
 
@@ -69,7 +73,7 @@
                 //SQL query exception
                 catch(Exception $e)
                 {
-                    echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
+                    $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
                 }
             }
             else
@@ -94,7 +98,7 @@
                     //SQL query exception
                     catch(Exception $e)
                     {
-                        echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
+                        $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
                     }
                 }
                 else{
