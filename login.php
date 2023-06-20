@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!empty($_SESSION["nameUser"]))
+    {
+        header("Location: views/dashboard.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +45,7 @@
                     </div>
 
                     <?php
-                    include "controllers/loginController.php";
+                        include "controllers/loginController.php";
                     ?>
 
                     <p>Don't have account? <a href="views/signup.php">Sign Up</a> </p>

@@ -1,7 +1,7 @@
 <?php
 
     //Start browser session
-    session_start();
+    //session_start();
 
     //Include database connection model
     include $_SERVER['DOCUMENT_ROOT'] . '/STAT/models/dbConnection.php';
@@ -35,11 +35,11 @@
                             $_SESSION["emailUser"] = $userData -> email;
                             $_SESSION["userRole"] = $userData -> role;
 
-                            echo "<div class='alert alert-success d-grid gap-2 mb-3' role='alert'>" . $_SESSION["emailUser"] . "</div>";
+                            header("Location: views/dashboard.php");
                         }
                         else
                         {
-                            echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Invalid email or wrong password</div>";
+                            echo "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Invalid email or wrong password!</div>";
                         }
 
                     }
