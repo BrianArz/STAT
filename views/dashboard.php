@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>Dashboard</title>
 
         <link rel="stylesheet" href="../resources/vendors/bootstrap/bootstrap.min.css">
 
