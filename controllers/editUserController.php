@@ -25,10 +25,6 @@
 
             try
             {
-
-                //Update user query
-                $dbConn -> query("delete from userExams where idUser = '$userId'");
-
                 //Update user query
                 $dbConn -> query("delete from users where idUser = '$userId'");
                 

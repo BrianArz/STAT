@@ -14,15 +14,6 @@
         <link rel="stylesheet" href="../resources/vendors/bootstrap/bootstrap.min.css">
 
         <link rel="stylesheet" href="../resources/css/style.css">
-
-        <style>
-            .wrapperImg{
-                background: #2562b2;  /* fallback colour. Make sure this is just one solid colour. */
-                background: -webkit-linear-gradient(rgba(253, 254, 255, 0.8), rgba(32, 92, 182, 0.8)), url("resources/img/loginBackground.jpg");
-                background: linear-gradient(rgba(253, 254, 255, 0.8), rgba(32, 92, 182, 0.8)), url("resources/img/loginBackground.jpg"); /* The least supported option. */
-                background-size: cover;
-            }
-        </style>
     </head>
 
     <body>
@@ -34,7 +25,11 @@
         </header>
 
 
-        <div class="wrapper">
+        <div class="wrapperContainer">
+            <div class="container">
+                <h1>Global Communities</h1>
+                <h6>Find the right exam from around the world</h6>
+            </div>
             
         </div>
 

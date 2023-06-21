@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">   
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="../views/dashboard.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Communities</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Exams</a>
+                    <a class="nav-link" href="../views/myexams.php">My Exams</a>
                 </li>
                 <li class="nav-item dropdown me-5">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>

@@ -10,6 +10,14 @@ html, body{
     align-items: center;
 }
 
+.wrapperContainer{
+    background-color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
 .logo{
     height: 90px;
 }
@@ -27,3 +35,17 @@ html, body{
     padding: 30px;
     text-align: center;
 }
+
+.table i{
+    color: black;
+}
+
+.table i:hover{
+    color: #0D6EFD;
+}
+
+.table thead{
+    color: #0D6EFD;
+}
+
+
