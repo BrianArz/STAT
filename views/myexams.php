@@ -58,9 +58,7 @@
                         <a href="newExam.php" class="btn btn-primary col-lg-2" role="button">New Exam</a>
                     </div>
                 </div>
-
-                <?php echo $errorMessage;?>
-
+                
                 <div class="row mt-5">
                     <div class="col-lg-12 col-md-6 d-flex">
                     <table class="table">

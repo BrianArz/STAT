@@ -1,9 +1,5 @@
 <?php
 
-    $errorMessage = "";
-
-    $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Hola</div>";
-
     include $_SERVER['DOCUMENT_ROOT'] . '/STAT/models/dbConnection.php';
 
     //Database connection try
@@ -14,7 +10,7 @@
     //Database exception
     catch(Exception $e)
     {
-        $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
+        file_put_contents('error_log.txt', $e->getMessage(), FILE_APPEND);
     }
 
     //Only if post
@@ -26,21 +22,34 @@
 
         if($operation === "deleteExam")
         {
-
+            file_put_contents('error_log.txt', $idExam , FILE_APPEND);
             try
             {
-                //Update user query
-                $dbConn -> query("delete from exams where idExam = '$idExam'");
+                $sql = $dbConn -> query("select pdf from exams where idExam = '$idExam'");
 
+                if($examData = $sql -> fetch_object())
+                {
+                    $pdfName = $examData ->  pdf;
+                }
 
-                
-                //Close database connection
-                closeConn($dbConn);
+                $pdfRoute = "../resources/files/" . $pdfName;
+
+                if(file_exists($pdfRoute))
+                {
+                    if(unlink($pdfRoute))
+                    {
+                        //Update user query
+                        $dbConn -> query("delete from exams where idExam = '$idExam'");
+
+                        //Close database connection
+                        closeConn($dbConn);
+                    }
+                }
             }
             //SQL query exception
             catch(Exception $e)
             {
-                $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>" . $e -> getMessage() . "</div>";
+                file_put_contents('error_log.txt', $e->getMessage(), FILE_APPEND);
             }
         }
     }
