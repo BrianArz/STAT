@@ -55,7 +55,7 @@
 
                 <div class="row mt-4">
                     <div class="col-lg-12 col-md-6 d-flex justify-content-end">
-                        <button type="button" class="btn btn-primary">New Exam</button>
+                        <a href="newExam.php" class="btn btn-primary col-lg-2" role="button">New Exam</a>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@
                                     <td><?php echo $examData["year"];?></td>
                                     <td><?php echo $examData["school"];?></td>
                                     <td>
-                                        <i class="bi bi-eye-fill me-2"></i>
+                                        <a href="../controllers/getPdf.php?idExam=<?php echo $examData['idExam']; ?>" target="_blank"><i class="bi bi-eye-fill me-2"></i></a>
                                         <i class="bi bi-pencil-fill me-2"></i>
                                         <i class="bi bi-trash3-fill me-2" onclick="phpController('deleteExam' , '<?php echo $examData['idExam']; ?>')"></i>
                                     </td>

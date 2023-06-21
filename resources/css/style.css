@@ -48,4 +48,8 @@ html, body{
     color: #0D6EFD;
 }
 
+textarea{
+    resize: none;
+}
+
 
