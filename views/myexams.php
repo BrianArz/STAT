@@ -49,7 +49,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-6">
-                        <h4>Checkout your exams</h4>
+                        <h1>Checkout your exams</h1>
+                        <h6>Create and edit your exams!</h6>
                     </div>
                 </div>
 
