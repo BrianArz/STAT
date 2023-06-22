@@ -28,7 +28,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dashboard</title>
+        <title>My Exams</title>
 
         <link rel="stylesheet" href="../resources/vendors/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

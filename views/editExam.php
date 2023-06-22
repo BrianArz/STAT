@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dashboard</title>
+        <title>Edit Exam</title>
 
         <link rel="stylesheet" href="../resources/vendors/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="../resources/css/style.css">

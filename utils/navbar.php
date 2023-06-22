@@ -26,7 +26,7 @@
                     <a class="nav-link" href="../views/dashboard.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Communities</a>
+                    <a class="nav-link" href="../views/myCommunities.php">My Communities</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../views/myexams.php">My Exams</a>
