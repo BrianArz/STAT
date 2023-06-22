@@ -1,11 +1,5 @@
 <?php
 
-    session_start();
-    if(empty($_SESSION["nameUser"]))
-    {
-        header("Location: ../login.php");
-    }
-
     //Include database connection model
     include $_SERVER['DOCUMENT_ROOT'] . '/STAT/models/dbConnection.php';
 

@@ -1,8 +1,5 @@
 <?php
 
-    //Starts browser session
-    session_start();
-
     //If not logged redirect to login
     if(empty($_SESSION["nameUser"]))
     {
