@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="col-lg-6 mb-2">
-                            <button name="btnUpdateUser" class="btn btn-lg btn-success col-lg-12" type="submit">Save Changes</button>
+                            <button name="btnUpdateUser" class="btn btn-lg btn-primary col-lg-12" type="submit">Save Changes</button>
                         </div>
                     </div>
                     
