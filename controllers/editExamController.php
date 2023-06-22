@@ -1,14 +1,5 @@
 <?php
 
-    //Starts browser session
-    session_start();
-
-    //If not logged redirect to login
-    if(empty($_SESSION["nameUser"]))
-    {
-        header("Location: ../login.php");
-    }
-
     //Include database connection controller
     include $_SERVER['DOCUMENT_ROOT'] . '/STAT/models/dbConnection.php';
 
@@ -17,6 +8,7 @@
 
     //Get id exam
     $idExam = $_GET["idExam"];
+    $idUser = $_SESSION["userId"];
 
     //Database connection try
     try
@@ -26,25 +18,31 @@
         //Sql try | Get all values from exam to edit
         try
         {
-            $sql = $dbConn -> query("select * from exams where idExam = '$idExam'");
+            $sql = $dbConn -> query("select * from exams where idExam = '$idExam' and idUser = '$idUser'");
 
-            //If query is not null
-            if($examData = $sql -> fetch_object())
+            if($sql -> num_rows > 0)
             {
-                $examTitle = $examData -> title;
-                $examSubject = $examData -> subject;
-                $examSchool = $examData -> school;
-                $examProfessor = $examData -> professor;
-                $examYear = $examData -> year;
 
-                closeConn($dbConn);
-            }
-            //If query null
-            else
-            {
-                $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Couldn't fetch exam data</div>";
-            }
+                //If query is not null
+                if($examData = $sql -> fetch_object())
+                {
+                    $examTitle = $examData -> title;
+                    $examSubject = $examData -> subject;
+                    $examSchool = $examData -> school;
+                    $examProfessor = $examData -> professor;
+                    $examYear = $examData -> year;
 
+                    closeConn($dbConn);
+                }
+                //If query null
+                else
+                {
+                    $errorMessage = "<div class='alert alert-danger d-grid gap-2 mb-3' role='alert'>Couldn't fetch exam data</div>";
+                }
+            }
+            else{
+                header("Location: ../views/dashboard.php");
+            }
         }
         //Sql exception
         catch(Exception $e)

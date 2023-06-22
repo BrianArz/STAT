@@ -1,5 +1,16 @@
 <?php
+
+    //Starts browser session
+    session_start();
+
     include "../controllers/editExamController.php";
+
+    //If not logged redirect to login
+    if(empty($_SESSION["nameUser"]))
+    {
+        header("Location: ../login.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
