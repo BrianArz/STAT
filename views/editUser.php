@@ -61,14 +61,16 @@
 
                     <?php echo $errorMessage; ?>
 
-                    <div class="d-grid gap-2 mt-4 mb-2">
-                        <button name="btnDeleteUser" class="btn btn-lg btn-danger" type="submit">Delete Account</button>
-                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-2">
+                            <button name="btnDeleteUser" class="btn btn-lg btn-danger col-lg-12" type="submit">Delete Account</button>
+                        </div>
 
-                    <div class="d-grid gap-2 mb-3">
-                        <button name="btnUpdateUser" class="btn btn-lg btn-success" type="submit">Save Changes</button>
+                        <div class="col-lg-6 mb-2">
+                            <button name="btnUpdateUser" class="btn btn-lg btn-success col-lg-12" type="submit">Save Changes</button>
+                        </div>
                     </div>
-
+                    
                 </form>
             </div>
         </div>
