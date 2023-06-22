@@ -38,7 +38,7 @@
 
                 <div class="row mt-4">
                     <div class="col-lg-12 col-md-6 d-flex justify-content-end">
-                        <a href="" class="btn btn-primary col-lg-2" role="button">New Community</a>
+                        <a href="newCommunity.php" class="btn btn-primary col-lg-2" role="button">New Community</a>
                     </div>
                 </div>
 
