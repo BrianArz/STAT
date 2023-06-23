@@ -86,6 +86,29 @@
                                     </div>
                                 </div>
 
+                                <div class="row col-lg-9 mt-4 d-flex justify-content-start">
+                                    <form method="post" action="">
+                                        <div class="col-lg-8 col-md-8 mb-3">
+                                            <label for="myExams" class="form-label">My Exams</label>
+                                            <select class="form-select" id="myExams" name="myExams">
+                                                <?php
+
+                                                $sql = mysqli_query($dbConn, "select * from exams where idUser ='$idUser'");
+
+                                                while($myExamsData = mysqli_fetch_assoc($sql)):
+                                                ?>
+                                                <option><?php echo $myExamsData["title"];?></option>
+
+                                                <?php endwhile;?>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 col-md-2 mb-2">
+                                            <label for="btnAddExam" class="form-label">&nbsp;</label>
+                                            <button name="btnAddExam" class="btn btn-md btn-success col-lg-12" type="submit" id="btnAddExam">Add</button> 
+                                        </div>
+                                    </form>
+                                </div>
+
                                 
                             </form>
                         </div>
