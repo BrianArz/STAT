@@ -65,13 +65,13 @@
                     <table class="table">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Subject</th>
-                            <th scope="col">Professor</th>
-                            <th scope="col">Year</th>
-                            <th scope="col">School</th>
-                            <th scope="col">Actions</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Subject</th>
+                                <th scope="col">Professor</th>
+                                <th scope="col">Year</th>
+                                <th scope="col">School</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -11,7 +11,6 @@
     $idUser = $_SESSION["userId"];
 
     $isEditUser = false;
-    $commTitle = "Hola";
 
     //Database connection try
     try
@@ -56,6 +55,8 @@
     //If form is sent through post method
     if ($_SERVER["REQUEST_METHOD"] === "POST") 
     {
+        $operation = $_POST["operation"];
+
         //If button is clicked
         if(isset($_POST['btnSaveCommunity'])) 
         {
@@ -92,10 +93,29 @@
 
         }
 
-        if(isset($_POST[""]))
+        if($operation === "addExam")
+        {
+
+            $myExam =  $_POST["idExam"];
+            $myIdCommunity = $_POST["idCommunity"];
+
+            $dbConn -> query("insert into examscommunities (idExam, idCommunity) values ('$myExam' , '$myIdCommunity')");
+
+            header("Refresh(0)");
+        }
+
+
+
+        if($operation === "deleteExam")
         {
             
+            $idExam = $_POST["idExam"];
+            $idCommunityDelete = $_POST["idCommunity"];
+
+            $dbConn -> query("delete from examscommunities where idExam = '$idExam' and idCommunity = '$idCommunityDelete'");
+            closeConn($dbConn);
         }
+        
 
     }
 ?>
