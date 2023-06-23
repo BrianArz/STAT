@@ -120,6 +120,8 @@
         {
             $dbConn -> query("delete from userscommunities where idCommunity = '$idCommunity'");
 
+            $dbConn -> query("delete from examscommunities where idCommunity = '$idCommunity'");
+
             $dbConn -> query("delete from communities where idCommunity = '$idCommunity'");
 
             closeConn($dbConn);

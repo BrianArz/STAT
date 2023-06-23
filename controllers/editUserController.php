@@ -25,6 +25,9 @@
 
             try
             {
+                //Delete user relations
+                $dbConn -> query("delete from userscommunities where idUser = '$userId'");
+
                 //Update user query
                 $dbConn -> query("delete from users where idUser = '$userId'");
                 
