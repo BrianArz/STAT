@@ -22,7 +22,7 @@
 
         if($operation === "deleteExam")
         {
-            file_put_contents('error_log.txt', $idExam , FILE_APPEND);
+            
             try
             {
                 $sql = $dbConn -> query("select pdf from exams where idExam = '$idExam'");

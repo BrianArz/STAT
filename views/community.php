@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 mb-3">
                                         <label for="author" class="form-label">Author</label>
-                                        <input type="text" class="form-control" id="author" required name="author" value="<?php echo $_SESSION["nameUser"];?>">
+                                        <input type="text" class="form-control" id="author" required name="author" value="<?php echo $commAuthor;?>">
                                     </div>
                                 </div>
 
@@ -82,7 +82,7 @@
 
                                 <div class="row mt-4 d-flex justify-content-end">
                                     <div class="col-lg-3 col-md-3 mb-3 d-flex justify-content-center">
-                                        <button name="btnSaveCommunity" class="btn btn-md btn-primary col-lg-12" type="submit" id="btnSave">Save Changes</button>
+                                        <button name="btnSaveCommunity" class="btn btn-md btn-primary col-lg-12" type="submit" id="btnSave">Update Information</button>
                                         <input type="hidden" value="none" name="operation">  
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                                 <?php endwhile;?>
                                             </select>
                                         </div>
-                                        <div class="col-lg-2 col-md-2 mb-2">
+                                        <div class="col-lg-2 mb-2">
                                             <label for="btnAddExam" class="form-label">&nbsp;</label>
                                             <?php if($examsRegistries != 0)
                                             {?>
@@ -186,6 +186,15 @@
                         </table>
                     </div>
                 </div>
+
+                <div class="row mt-5">
+                    <div class="d-flex justify-content-center">
+                        <form action="" class="col-lg-12 col-md-12 d-flex justify-content-center">
+                            <button name="btnDeleteCommunity" class="btn btn-md btn-danger col-lg-4" type="button" id="btnDeleteCommunity">Delete Community</button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
 
