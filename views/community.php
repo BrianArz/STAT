@@ -187,13 +187,17 @@
                     </div>
                 </div>
 
+                <?php if($isEditUser) { ?>
+
                 <div class="row mt-5">
                     <div class="d-flex justify-content-center">
-                        <form action="" class="col-lg-12 col-md-12 d-flex justify-content-center">
-                            <button name="btnDeleteCommunity" class="btn btn-md btn-danger col-lg-4" type="button" id="btnDeleteCommunity">Delete Community</button>
+                        <form method="post" action="" class="col-lg-12 col-md-12 d-flex justify-content-center">
+                            <button name="btnDeleteCommunity" class="btn btn-md btn-danger col-lg-4" type="submit" id="btnDeleteCommunity">Delete Community</button>
                         </form>
                     </div>
                 </div>
+
+                <?php } ?>
 
             </div>
         </div>

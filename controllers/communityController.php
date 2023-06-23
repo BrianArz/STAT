@@ -115,6 +115,17 @@
             $dbConn -> query("delete from examscommunities where idExam = '$idExam' and idCommunity = '$idCommunityDelete'");
             closeConn($dbConn);
         }
+
+        if(isset($_POST['btnDeleteCommunity']))
+        {
+            $dbConn -> query("delete from userscommunities where idCommunity = '$idCommunity'");
+
+            $dbConn -> query("delete from communities where idCommunity = '$idCommunity'");
+
+            closeConn($dbConn);
+
+            header("Location: ../views/myCommunities.php");
+        }
         
 
     }
